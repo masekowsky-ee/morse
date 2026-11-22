@@ -31,11 +31,15 @@ export default async function soundGen(string){
 
     for (let i = 0; i < string.length; i++){
         if (string[i] === "0") {
-            playSound(0.05, 0.1);
-            await sleep(150);
+            playSound(0.05, 0.05);
+            await sleep(100);
         } else if (string[i] === "1") {
-            playSound(0.2, 0.1);
-            await sleep(300);
+            playSound(0.15, 0.05);
+            await sleep(200);
+        } else if (string[i] === "+") {
+            await sleep(150);
+        } else if (string[i] === "_") {
+            await sleep(350);
         }
-    }
+    } 
 }

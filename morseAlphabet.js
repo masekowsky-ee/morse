@@ -38,6 +38,7 @@ const morseAlphabet = {
     ".": ".-.-.-",
     ",": "--..--",
     "?": "..--..",
+    "_": "_",
 };
 
 export default function getCode(value) {

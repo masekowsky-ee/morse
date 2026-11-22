@@ -4,15 +4,14 @@ import soundGen from "./soundGen.js"
 export default function encode(e) {
     e.preventDefault();
     let input = document.getElementById("input")
-        .value.replace(/\s+/g, "");
+        .value.replace(/_/g, "_")
+        .replace(/\s+/g, "_");
     console.log(input);
 
     let output = "";
     for (let i = 0; i < input.length; i++) {
-        output += getCode(input[i]) + "     ";
+        output += getCode(input[i]) + "+";
     }
-
-    document.getElementById("output").textContent = output;
 
     let binaryOutput = "";
     output.split(" ").forEach((code) => {
@@ -21,9 +20,23 @@ export default function encode(e) {
                 binaryOutput += "0";
             } else if (code[i] === "-") {
                 binaryOutput += "1";
+            } else if (code[i] === "_") {
+                binaryOutput += "_";
+            } else if (code[i] === "+") {
+                binaryOutput += "+";
             }
         }
     });
-    document.getElementById("binaryOutput").textContent = binaryOutput;
+
     soundGen(binaryOutput);
+
+    output = output
+        .replace(/_/g, " _ ")
+        .replace(/\+/g, " ");
+    document.getElementById("output").textContent = output;
+
+    binaryOutput = binaryOutput
+        .replace(/_/g, " _ ")
+        .replace(/\+/g, " ");
+    document.getElementById("binaryOutput").textContent = binaryOutput;
 }

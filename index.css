@@ -1,0 +1,47 @@
+*{
+    font-family: "Courier New";
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+}
+
+h1{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+form{
+    font-size: 2em;
+}
+
+#input{
+    width: 50vw;
+    height: 10vh;
+    max-height: 50px;
+    font-size: inherit;
+    padding: 3px;
+    margin: 0;
+}
+
+#submit{
+    width: fit-content;
+    height: 10vh;
+    max-height: 50px;
+    font-size: inherit;
+    padding: 3px;
+}
+
+.code{
+    font-size: 3vh;
+    text-align: center;
+    max-width: 90vw;
+}
+
+#binaryOutput{
+    overflow-wrap: break-word; 
+}

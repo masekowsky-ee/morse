@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> MorseCoder </title>
+    </head>
+    <body>
+        <form id="form">
+            <input type="text" id="input">
+            <input type="submit" />
+        </form>
+        <p id="output">
+
+        </p>
+        <p id="binaryOutput">
+
+        </p>
+    </body>
+    <script type="module">
+        import encode from './encode.js'
+
+        document
+            .getElementById('form')
+            .addEventListener('submit', encode)
+    </script>
+</html>
